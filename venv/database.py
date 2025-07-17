@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# --- INÍCIO DA ALTERAÇÃO ---
 
 # Pega o caminho absoluto do diretório onde este arquivo (database.py) está
 diretorio_atual = os.path.dirname(os.path.abspath(__file__))
