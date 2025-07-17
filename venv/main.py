@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from typing import List, Optional
+from datetime import datetime, timezone
 import logging
 
 import models, schemas, crud
@@ -69,7 +70,10 @@ def root():
 
 @app.get("/health", tags=["Health"])
 def health_check():
-    return {"status": "OK", "timestamp": "2025-07-16T15:00:00Z"}
+    # Gera o timestamp no momento exato da requisição, no padrão UTC
+    timestamp_atual = datetime.now(timezone.utc).isoformat()
+    
+    return {"status": "OK", "timestamp": timestamp_atual}
 
 # === ENDPOINTS PRODUTOS ===
 
