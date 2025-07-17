@@ -165,7 +165,6 @@ curl -X POST "http://localhost:8000/pedidos" \
 
 ### Tabela: itens_pedido
 - id (PK)
-- pedido_id (FK)
 - produto_id (FK)
 - nome_produto
 - quantidade
